@@ -1,0 +1,19 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+        <h1><%= listTitle%></h1>
+    </div>
+    <div class="box">
+            <%for (let i = 0; i < newListItems.length; i++) {%>
+                <div class="item">
+                    <input type="checkbox">
+                <p><%=newListItems[i]%></p>
+                </div>
+                <%}%>
+                <form action="/" method="post" class="item">
+                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                    <!-- 在app.get中试试console.log（req.body）看看这里的value是什么 -->
+                    <button type="submit" name="button" value=<%=listTitle%>>+</button>
+                </form>
+    </div>
+<%- include("footer") -%>
+   
